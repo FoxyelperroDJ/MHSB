@@ -1,4 +1,4 @@
--- MADE BY RIP#6666 ( MODIFICADO POR AJ, backup by Fox lol )
+-- MADE BY RIP#6666 ( backup by Fox lol )
 
 if not _G.Ignore then
     _G.Ignore = {} -- Add Instances to this table to ignore them (e.g. _G.Ignore = {workspace.Map, workspace.Map2})
@@ -7,7 +7,7 @@ if not _G.WaitPerAmount then
     _G.WaitPerAmount = 500 -- Set Higher or Lower depending on your computer's performance
 end
 if _G.SendNotifications == nil then
-    _G.SendNotifications = true -- Set to false if you don't want notifications
+    _G.SendNotifications = false -- Set to false if you don't want notifications
 end
 if _G.ConsoleLogs == nil then
     _G.ConsoleLogs = false -- Set to true if you want console logs (mainly for debugging)
@@ -193,10 +193,10 @@ local function CheckIfBad(Instance)
 end
 if _G.SendNotifications then
     StarterGui:SetCore("SendNotification", {
-        Title = "Cargando FPS BOOST (Sigueme @ajk.al)",
-        Text = "Loading FPS Booster...",
+        Title = "Hold a sec...",
+        Text = "Boosting FPS...",
         Duration = math.huge,
-        Button1 = "Okay"
+        Button1 = "-"
     })
 end
 coroutine.wrap(pcall)(function()
@@ -214,17 +214,16 @@ coroutine.wrap(pcall)(function()
             sethiddenproperty(workspace:FindFirstChildOfClass("Terrain"), "Decoration", false)
         else
             StarterGui:SetCore("SendNotification", {
-                Title = "FPS BOOST",
-                Text = "Tu exploit No admite sethiddenproperty, por favor use un exploit diferente",
+                Title = "Notification",
+                Text = "Your exploit does not support sethiddenproperty, please use a different exploit.",
                 Duration = 5,
                 Button1 = "Okay"
             })
-            warn("Your exploit does not support sethiddenproperty, please use a different exploit.")
         end
         if _G.SendNotifications then
             StarterGui:SetCore("SendNotification", {
-                Title = "FPS BOOST",
-                Text = "Gráficos de baja agua habilitados",
+                Title = "Notification",
+                Text = "Low water graphics enabled",
                 Duration = 5,
                 Button1 = "Okay"
             })
@@ -243,17 +242,16 @@ coroutine.wrap(pcall)(function()
             sethiddenproperty(Lighting, "Technology", 2)
         else
             StarterGui:SetCore("SendNotification", {
-                Title = "FPS BOOST",
-                Text = "Tu exploit no admite sethiddenproperty, por favor utiliza otro exploit.",
+                Title = "Notification",
+                Text = "Your exploit does not support sethiddenproperty, please use a different exploit.",
                 Duration = 5,
                 Button1 = "Okay"
             })
-            warn("Your exploit does not support sethiddenproperty, please use a different exploit.")
         end
         if _G.SendNotifications then
             StarterGui:SetCore("SendNotification", {
-                Title = "FPS BOOST",
-                Text = "Sin sombras habilitadas",
+                Title = "Notification",
+                Text = "No Shadows Enabled",
                 Duration = 5,
                 Button1 = "Okay"
             })
@@ -269,8 +267,8 @@ coroutine.wrap(pcall)(function()
         settings().Rendering.MeshPartDetailLevel = Enum.MeshPartDetailLevel.Level04
         if _G.SendNotifications then
             StarterGui:SetCore("SendNotification", {
-                Title = "FPS BOOST",
-                Text = "Renderizado Bajo Habilitado",
+                Title = "Notification",
+                Text = "Low Rendering Enabled",
                 Duration = 5,
                 Button1 = "Okay"
             })
@@ -288,8 +286,8 @@ coroutine.wrap(pcall)(function()
         MaterialService.Use2022Materials = false
         if _G.SendNotifications then
             StarterGui:SetCore("SendNotification", {
-                Title = "FPS BOOST",
-                Text = "Activado reinicio de materiales (Texturas)",
+                Title = "Notification",
+                Text = "Reset Materials Enabled",
                 Duration = 5,
                 Button1 = "Okay"
             })
@@ -306,7 +304,7 @@ coroutine.wrap(pcall)(function()
                 setfpscap(tonumber(_G.Settings["FPS Cap"] or (_G.Settings.Other and _G.Settings.Other["FPS Cap"])))
                 if _G.SendNotifications then
                     StarterGui:SetCore("SendNotification", {
-                        Title = "FPS BOOST",
+                        Title = "Notification",
                         Text = "FPS Capped to " .. tostring(_G.Settings["FPS Cap"] or (_G.Settings.Other and _G.Settings.Other["FPS Cap"])),
                         Duration = 5,
                         Button1 = "Okay"
@@ -319,8 +317,8 @@ coroutine.wrap(pcall)(function()
                 setfpscap(1e6)
                 if _G.SendNotifications then
                     StarterGui:SetCore("SendNotification", {
-                        Title = "FPS BOOST",
-                        Text = "FPS Ilimitado",
+                        Title = "Notification",
+                        Text = "FPS Uncapped",
                         Duration = 5,
                         Button1 = "Okay"
                     })
@@ -331,8 +329,8 @@ coroutine.wrap(pcall)(function()
             end
         else
             StarterGui:SetCore("SendNotification", {
-                Title = "FPS BOOST",
-                Text = "FPS Ilimitado Fallido",
+                Title = "Notification",
+                Text = "FPS Cap Failed",
                 Duration = math.huge,
                 Button1 = "Okay"
             })
